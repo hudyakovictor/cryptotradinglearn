@@ -146,3 +146,39 @@ body{min-height:100vh;display:flex;flex-direction:column;padding-bottom:64px}
   .card{padding:16px 14px 14px}
   .hud-cell{min-width:50%}
 }
+
+/* ===== ГЛАВА 2: НОВЫЕ МЕХАНИКИ ===== */
+
+/* стакан */
+.ob{border:1px solid var(--line);margin:12px 0;font-size:14px;background:var(--paper2)}
+.ob-head{display:flex;justify-content:space-between;padding:6px 12px;border-bottom:1px solid var(--line);color:var(--dim);font-size:10px;letter-spacing:.18em}
+.ob-row{display:flex;justify-content:space-between;padding:5px 12px;border-bottom:1px solid #1c1d20}
+.ob-row.ask span:first-child{color:var(--blood);font-weight:bold}
+.ob-row.bid span:first-child{color:var(--acid);font-weight:bold}
+.ob-spread{padding:6px 12px;color:var(--amber);letter-spacing:.25em;font-size:11px;text-align:center;border-bottom:1px solid var(--line)}
+
+/* калькулятор плеча */
+.lev-btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.lev-btns .btn{width:auto}
+#lev-out{min-height:56px;margin:10px 0}
+
+/* вскрытие правды */
+.rev{border:1px solid var(--line);margin:8px 0;padding:12px 14px;cursor:pointer;background:var(--paper2);transition:border-color .1s}
+.rev:hover{border-color:var(--amber)}
+.rev.open{border-color:var(--amber);cursor:default}
+.rev-t{font-weight:bold;text-transform:uppercase;font-size:13px;letter-spacing:.04em}
+.rev-hint{color:var(--dim);font-weight:normal;font-size:11px;text-transform:none}
+.rev-b{margin-top:8px}
+
+/* дневник */
+.jfield{margin:12px 0}
+.j-sel{width:100%;background:var(--paper2);color:var(--ink);border:1px solid var(--ink);padding:10px 12px;font-family:inherit;font-size:14px}
+.j-sel:focus{outline:2px solid var(--acid)}
+
+/* торговый симулятор */
+.sim{border:1px solid var(--line);padding:16px;margin:10px 0;background:var(--paper2)}
+.sim-price{font-family:Impact,"Arial Black",sans-serif;font-size:46px;text-align:center;margin:6px 0;color:var(--acid);letter-spacing:.03em}
+.sim-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.sim-btns .btn{width:auto;margin:0}
+#ts-log{min-height:20px;text-align:center}
+#ts-count{text-align:center;letter-spacing:.08em}

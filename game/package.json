@@ -1,0 +1,11 @@
+{
+  "name": "nalog-na-nadezhdu",
+  "private": true,
+  "description": "НАЛОГ НА НАДЕЖДУ — сатирическая обучающая игра о криптотрейдинге (главы 1–2)",
+  "scripts": {
+    "test": "node test/smoke.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}
