@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НАЛОГ НА НАДЕЖДУ — сатирическая обучающая игра о криптотрейдинге</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <span class="mast-side">СЛУЖБА ПО ПЕРЕРАСПРЕДЕЛЕНИЮ ЧУЖИХ ДЕНЕГ</span>
+    <h1 class="mast-title">НАЛОГ&nbsp;НА&nbsp;НАДЕЖДУ</h1>
+    <span class="mast-side">ЕЖЕДНЕВНАЯ ГАЗЕТА ЦИФРОВОГО ХАОСА</span>
+  </div>
+  <div class="masthead-sub">сатира, которая обучает · выпуск №0–99 · цена: пара минут веры</div>
+</header>
+
+<div class="hud" id="hud">
+  <div class="hud-cell"><span class="hud-label">УРОВЕНЬ</span><span class="hud-value" id="hud-level">0/99</span></div>
+  <div class="hud-cell"><span class="hud-label">КАПИТАЛ (ДЕМО)</span><span class="hud-value" id="hud-capital">1000 USDT</span></div>
+  <div class="hud-cell"><span class="hud-label">ИНДЕКС ВЕРЫ В ГРАФИК</span><span class="hud-value" id="hud-faith">100%</span></div>
+  <div class="hud-cell"><span class="hud-label">СТАТУС</span><span class="hud-value" id="hud-status">клиент приёмной</span></div>
+</div>
+
+<main id="screen">
+  <!-- Экраны рендерятся движком: титул / карта глав / уровни / аттестат -->
+</main>
+
+<footer class="disclaimer">
+  Это сатира и учебная игра. Не финансовая рекомендация. Мы не обещаем доходность —
+  это единственное обещание, которое на этом рынке выполняется. Все деньги в игре вымышленные. Все паттерны поведения — нет.
+</footer>
+
+<div class="ticker" id="ticker">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<script src="content.js"></script>
+<script src="engine.js"></script>
+</body>
+</html>

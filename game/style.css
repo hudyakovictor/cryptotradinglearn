@@ -1,0 +1,148 @@
+/* НАЛОГ НА НАДЕЖДУ — панк-таблоидная криптосатира */
+
+:root{
+  --bg:#0a0a0a;
+  --paper:#111214;
+  --paper2:#17181b;
+  --ink:#e8e6df;
+  --dim:#8f8c82;
+  --acid:#a3ff12;
+  --blood:#ff3b3b;
+  --amber:#ffb020;
+  --line:#2a2b2f;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{background:var(--bg);color:var(--ink);font-family:"Courier New",ui-monospace,Menlo,monospace;font-size:16px}
+body{min-height:100vh;display:flex;flex-direction:column;padding-bottom:64px}
+
+/* ===== МАСТХЕД ===== */
+.masthead{border-bottom:4px double var(--ink);padding:14px 12px 10px;text-align:center;background:
+  repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.015) 3px 6px)}
+.masthead-top{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.mast-side{font-size:10px;letter-spacing:.18em;color:var(--dim);max-width:220px;text-align:center}
+.mast-title{font-family:Impact,"Arial Black","Helvetica Neue",sans-serif;font-size:clamp(34px,7vw,72px);
+  letter-spacing:.04em;line-height:.95;color:var(--ink);text-shadow:4px 4px 0 #000,5px 5px 0 var(--blood)}
+.masthead-sub{margin-top:8px;font-size:11px;letter-spacing:.28em;color:var(--acid)}
+
+/* ===== HUD ===== */
+.hud{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:50}
+.hud-cell{flex:1 1 auto;min-width:140px;padding:8px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.hud-cell:last-child{border-right:none}
+.hud-label{font-size:9px;letter-spacing:.2em;color:var(--dim)}
+.hud-value{font-size:15px;font-weight:bold;color:var(--ink)}
+.hud-value.good{color:var(--acid)}
+.hud-value.bad{color:var(--blood)}
+
+/* ===== ЭКРАН ===== */
+#screen{flex:1;width:100%;max-width:860px;margin:0 auto;padding:26px 16px 60px}
+
+.card{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--acid);
+  padding:22px 22px 18px;margin-bottom:18px;position:relative;
+  box-shadow:0 0 0 1px #000, 6px 6px 0 rgba(0,0,0,.55)}
+.card.alert{border-left-color:var(--blood)}
+.card.report{border-left-color:var(--amber)}
+.card.archive{border-left-color:var(--amber);background:#141208;background:linear-gradient(180deg,#15130b,#111)}
+
+.stamp{position:absolute;top:12px;right:14px;transform:rotate(7deg);border:3px solid var(--blood);color:var(--blood);
+  font-family:Impact,"Arial Black",sans-serif;font-size:13px;letter-spacing:.14em;padding:2px 8px;opacity:.85;
+  text-transform:uppercase;pointer-events:none}
+.stamp.amber{border-color:var(--amber);color:var(--amber)}
+
+.headline{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(22px,4vw,34px);line-height:1.05;
+  text-transform:uppercase;margin-bottom:12px;letter-spacing:.01em}
+.kicker{font-size:11px;letter-spacing:.3em;color:var(--acid);text-transform:uppercase;margin-bottom:8px}
+.card.alert .kicker{color:var(--blood)}
+
+.par{font-size:15.5px;line-height:1.65;margin-bottom:12px;color:var(--ink)}
+.par .hl{color:var(--acid);font-weight:bold}
+.par .warn{color:var(--blood);font-weight:bold}
+.par.small{font-size:13px;color:var(--dim)}
+
+/* ===== КНОПКИ ===== */
+.btn{display:block;width:100%;text-align:left;background:var(--paper2);border:1px solid var(--ink);color:var(--ink);
+  font-family:inherit;font-size:15px;font-weight:bold;padding:14px 16px;margin:10px 0;cursor:pointer;
+  transition:transform .08s ease, background .08s;text-transform:uppercase;letter-spacing:.02em}
+.btn:hover:not(:disabled){background:var(--acid);color:#000;transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--blood)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.small{width:auto;display:inline-block;font-size:13px;padding:9px 14px}
+.btn.primary{border-width:2px}
+
+.outcome{border:1px dashed var(--acid);background:rgba(163,255,18,.05);padding:14px 16px;margin:8px 0 4px}
+.outcome .verdict{font-size:15px;line-height:1.55}
+.effects{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.effect{font-size:11px;letter-spacing:.08em;border:1px solid;padding:2px 8px;text-transform:uppercase}
+.effect.neg{border-color:var(--blood);color:var(--blood)}
+.effect.pos{border-color:var(--acid);color:var(--acid)}
+.effect.neu{border-color:var(--dim);color:var(--dim)}
+
+/* ===== АРХИВНАЯ СПРАВКА ===== */
+.archive .kicker{color:var(--amber)}
+.archive .fact{font-size:13.5px;line-height:1.6;color:#d8cfa8}
+.archive .src{margin-top:10px;font-size:11px;letter-spacing:.12em;color:var(--amber);text-transform:uppercase}
+.archive .note{margin-top:6px;font-size:11px;color:var(--dim)}
+
+/* ===== ТИТУЛ ===== */
+.title-screen{text-align:center;padding-top:10px}
+.title-screen .big-btn{font-size:19px;padding:20px;text-align:center}
+.title-notice{border:2px solid var(--blood);padding:14px 18px;margin:22px auto;max-width:640px;font-size:13px;
+  line-height:1.6;color:var(--ink);background:rgba(255,59,59,.05);text-align:left}
+.title-notice .t{color:var(--blood);font-weight:bold;letter-spacing:.2em;font-size:11px;margin-bottom:8px}
+.title-credits{margin-top:26px;font-size:11px;color:var(--dim);line-height:1.8}
+
+/* ===== КАРТА ГЛАВ ===== */
+.chapter{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);background:var(--paper);
+  padding:16px 18px;margin-bottom:12px;border-left:5px solid var(--line)}
+.chapter.done{border-left-color:var(--acid)}
+.chapter.current{border-left-color:var(--amber);outline:1px solid var(--amber)}
+.chapter.locked{opacity:.55}
+.chapter .ch-no{font-family:Impact,"Arial Black",sans-serif;font-size:26px;min-width:86px;color:var(--dim)}
+.chapter.done .ch-no{color:var(--acid)}
+.chapter .ch-title{font-weight:bold;text-transform:uppercase;font-size:15px;margin-bottom:4px}
+.chapter .ch-tease{font-size:13px;color:var(--dim);line-height:1.5}
+.chapter .ch-tag{display:inline-block;font-size:10px;letter-spacing:.15em;border:1px solid var(--dim);
+  color:var(--dim);padding:1px 6px;margin-top:6px;text-transform:uppercase}
+.chapter.done .ch-tag{border-color:var(--acid);color:var(--acid)}
+.chapter.current .ch-tag{border-color:var(--amber);color:var(--amber)}
+
+/* ===== ЭКЗАМЕН ===== */
+.exam-progress{font-size:12px;letter-spacing:.2em;color:var(--dim);margin-bottom:14px;text-transform:uppercase}
+.q-feedback{border-left:4px solid var(--acid);padding:12px 14px;margin:10px 0;background:rgba(163,255,18,.05);font-size:14px;line-height:1.55}
+.q-feedback.wrong{border-left-color:var(--blood);background:rgba(255,59,59,.06)}
+
+/* ===== АТТЕСТАТ ===== */
+.diploma{border:4px double var(--acid);padding:30px 26px;text-align:center;background:
+  radial-gradient(circle at 50% 0%,rgba(163,255,18,.08),transparent 60%)}
+.diploma h2{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(24px,5vw,40px);text-transform:uppercase;margin-bottom:10px}
+.diploma .sub{color:var(--acid);letter-spacing:.25em;font-size:12px;margin-bottom:18px}
+.diploma .body{font-size:15px;line-height:1.7}
+
+.statline{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:8px 2px;font-size:14px}
+.statline b{color:var(--acid)}
+
+/* ===== ФИШИНГ-РАУНДЫ ===== */
+.urls{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+.urls .btn{flex:1 1 240px;text-align:center;font-size:14px;word-break:break-all}
+
+/* ===== БЕГУЩАЯ СТРОКА ===== */
+.ticker{position:fixed;bottom:0;left:0;right:0;background:#000;border-top:2px solid var(--blood);
+  overflow:hidden;height:40px;display:flex;align-items:center;z-index:60}
+.ticker-track{white-space:nowrap;display:inline-block;animation:scroll 90s linear infinite;
+  font-size:13px;letter-spacing:.06em;color:var(--ink);padding-left:100%}
+.ticker-track span{margin-right:64px}
+.ticker-track .t-sep{color:var(--blood);font-weight:bold}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+.ticker:hover .ticker-track{animation-play-state:paused}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer{max-width:860px;margin:0 auto;padding:14px 16px 26px;font-size:11px;color:var(--dim);
+  line-height:1.6;text-align:center}
+
+.footnote-center{text-align:center;margin-top:8px}
+
+@media(max-width:600px){
+  .mast-side{display:none}
+  .card{padding:16px 14px 14px}
+  .hud-cell{min-width:50%}
+}
